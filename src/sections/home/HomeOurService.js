@@ -2,25 +2,28 @@ import { m } from 'framer-motion';
 import * as React from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Container, Typography } from '@mui/material';
-
-
-// components
-import Image from '../../components/Image';
+import { Box, Grid, Container, Typography, Button } from '@mui/material';
+import ServiceCard from '../../components/serviceCard/ServiceCard';
 
 // ----------------------------------------------------------------------
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(5, 0, 0, 0),
 }));
+
+const SeeAllButton = styled(Button)(({ theme }) => ({
+  width: '130px',
+  height: '50px',
+  backgroundColor: theme.palette.primary.main,
+  boxShadow: '0px 0px 20px 3px rgba(0, 101, 165, 0.3)',
+  borderRadius: '4px',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: theme.palette.primary.main,
+  }
+}))
 // ----------------------------------------------------------------------
 
 export default function HomeOurService() {
-  const [value, setValue] = React.useState('1');
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
@@ -32,7 +35,7 @@ export default function HomeOurService() {
                   Our Solutions
                 </Typography>
                 <Typography color="primary" variant="h2" sx={{ fontWeight: '300!important', mb: 2 }}>
-                  The Services We 
+                  The Services We
                 </Typography>
                 <Typography color="primary" variant="h5" sx={{ fontWeight: '300!important', mb: 2 }}>
                   Provide
@@ -40,13 +43,81 @@ export default function HomeOurService() {
               </m.div>
             </Box>
           </Grid>
-          {/* <Grid item xs="12">
-            <Grid container>
-              <Grid >
-
+          <Grid item xs="12">
+            <Grid container spacing={2}>
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image43.png'}
+                  iconColor={'#C4F5EC'}
+                  cardStyle={'default'}
+                  title={'Engineering'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
               </Grid>
-            <Grid />
-          </Grid> */}
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image38.png'}
+                  iconColor={'#FFFFFF'}
+                  cardStyle={'second'}
+                  title={'Project'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
+              </Grid>
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image39.png'}
+                  iconColor={'#FCE4C4'}
+                  cardStyle={'default'}
+                  title={'Marketing'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
+              </Grid>
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image42.png'}
+                  iconColor={'#FCE4C4'}
+                  cardStyle={'default'}
+                  title={'Design'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
+              </Grid>
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image41.png'}
+                  iconColor={'#F5C4EB'}
+                  cardStyle={'default'}
+                  title={'Human Resource'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
+              </Grid>
+              <Grid item xs="4">
+                <ServiceCard
+                  imageUrl={'/assets/icons/image40.png'}
+                  iconColor={'#B8E5FF'}
+                  cardStyle={'default'}
+                  title={'Operation'}
+                  text={
+                    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'
+                  }
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid sx={{ itemAlign: 'center' }}>
+            <Box sx={{ padding: '10px', marginTop: '20px'}}>
+              <SeeAllButton backgroundColor="primary" >See All</SeeAllButton>
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </RootStyle>

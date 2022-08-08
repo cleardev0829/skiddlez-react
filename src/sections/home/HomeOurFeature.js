@@ -159,7 +159,7 @@ export default function HomeOurFeature() {
                   </NavigatorStyle>
                 </Grid>
                 <Grid item xs="10">
-                  <Grid containder>
+                  <Grid containder sx={{ display: 'flex' }}>
                     <Grid item md="3">
                       <IconStyle>
                         <Image src="/assets/icons/image 34.png" width="60" height="60" />

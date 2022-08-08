@@ -10,3 +10,5 @@ export { default as HomeHugePackElements } from './HomeHugePackElements';
 export { default as HomeOurFeature } from './HomeOurFeature';
 export { default as HomeOurProject } from './HomeOurProject';
 export { default as HomeInegrateApp } from './HomeInegrateApp';
+export { default as HomeOurService } from './HomeOurService';
+export { default as HomeDownloadMobile } from './HomeDownloadMobile';
