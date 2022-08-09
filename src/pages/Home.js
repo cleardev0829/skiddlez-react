@@ -5,10 +5,10 @@ import Page from '../components/Page';
 // sections
 import {
   HomeDarkMode,
-  HomeLookingFor,
+  // HomeLookingFor,
   HomeColorPresets,
   HomePricingPlans,
-  HomeAdvertisement,
+  // HomeAdvertisement,
   // HomeCleanInterfaces,
   HomeHugePackElements,
   HomeOurFeature,
