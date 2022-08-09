@@ -45,7 +45,7 @@ export default function HomeOurService() {
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image43.png'}
                   iconColor={'#C4F5EC'}
@@ -56,7 +56,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image38.png'}
                   iconColor={'#FFFFFF'}
@@ -67,7 +67,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image39.png'}
                   iconColor={'#FCE4C4'}
@@ -78,7 +78,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image42.png'}
                   iconColor={'#FCE4C4'}
@@ -89,7 +89,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image41.png'}
                   iconColor={'#F5C4EB'}
@@ -100,7 +100,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs={12} sm={6} md={6}>
+              <Grid item xs={12} sm={6} md={4}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image40.png'}
                   iconColor={'#B8E5FF'}

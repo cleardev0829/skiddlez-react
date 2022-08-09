@@ -53,7 +53,7 @@ export default function HomeOurProject() {
                     sx={{
                       marginLeft: 'auto',
                       marginRight: 'auto',
-                      maxWidth: '850px'
+                      maxWidth: '850px',
                     }}
                   >
                     <Tab label="Project Management" value="1" />
@@ -66,30 +66,32 @@ export default function HomeOurProject() {
                     <Tab label="IT" value="8" />
                   </TabList>
                 </Box>
-                <TabPanel value="1">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="2">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="3">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="4">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="5">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="6">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="7">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
-                <TabPanel value="8">
-                  <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
-                </TabPanel>
+                <Box sx={{ minHeight: '850px',}}>
+                  <TabPanel value="1">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="2">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="3">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="4">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="5">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="6">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="7">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                  <TabPanel value="8">
+                    <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
+                  </TabPanel>
+                </Box>
               </TabContext>
             </Box>
           </Grid>

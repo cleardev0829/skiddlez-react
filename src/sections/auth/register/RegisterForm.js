@@ -11,7 +11,7 @@ import useAuth from '../../../hooks/useAuth';
 import useIsMountedRef from '../../../hooks/useIsMountedRef';
 // components
 import Iconify from '../../../components/Iconify';
-import { FormProvider, RHFTextField } from '../../../components/hook-form';
+import { FormProvider, RHFTextField , RHFCheckbox} from '../../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
@@ -65,10 +65,7 @@ export default function RegisterForm() {
       <Stack spacing={3}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <RHFTextField name="firstName" label="First name" />
-          <RHFTextField name="lastName" label="Last name" />
-        </Stack>
+        <RHFTextField name="FullName" label="Full name" sx={{ mb: 2 }} />
 
         <RHFTextField name="email" label="Email address" />
 
@@ -87,9 +84,14 @@ export default function RegisterForm() {
           }}
         />
 
+        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
+          <RHFCheckbox name="remember" label="I agree to the Terms and Privacy Policy." />
+        </Stack>
+
         <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
-          Register
+          Sign Up
         </LoadingButton>
+        
       </Stack>
     </FormProvider>
   );

@@ -2,10 +2,7 @@ import { m } from 'framer-motion';
 import * as React from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-
-import { Box, Grid, Container, Typography, Button } from '@mui/material';
-// @mui
-import Image from '../../components/Image';
+import { Container, Typography, Button } from '@mui/material';
 
 // ----------------------------------------------------------------------
 const RootStyle = styled('div')(({ theme }) => ({

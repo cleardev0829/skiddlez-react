@@ -46,8 +46,16 @@ const IconStyle = styled('div')(() => ({
 }));
 
 const ItemContectStyle = styled('div')(() => ({
-  marginLeft: '70px',
+  marginLeft: '80px',
   textAlign: 'left',
+}));
+
+const ReacMoreButtonStyle = styled(Button)(() => ({
+  marginLeft: '71px',
+  border: '0px',
+  '&: hover': {
+    border: '0px',
+  },
 }));
 
 // ----------------------------------------------------------------------
@@ -60,6 +68,29 @@ const breakPoints = [
 // ----------------------------------------------------------------------
 
 export default function HomeOurFeature() {
+  const carouselData = [
+    {
+      iconUrl: '/assets/icons/image 34.png',
+      title: 'Dashboard',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+    },
+    {
+      iconUrl: '/assets/icons/image 35.png',
+      title: 'Automations',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+    },
+    {
+      iconUrl: '/assets/icons/image 36.png',
+      title: 'Files',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+    },
+    {
+      iconUrl: '/assets/icons/image 37.png',
+      title: 'Integrations',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+    },
+  ];
+
   return (
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
@@ -142,58 +173,29 @@ export default function HomeOurFeature() {
           </Grid>
           <Grid item xs={12} lg={12}>
             <Carousel breakPoints={breakPoints}>
-              <div key={1} style={{ width: '250px' }}>
-                <IconStyle>
-                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
-                </IconStyle>
-                <ItemContectStyle>
-                  <m.div>
-                    <Typography variant="h6" color="primary">
-                      Dashboard
-                    </Typography>
-                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
-                  </m.div>
-                </ItemContectStyle>
-              </div>
-              <div key={2} style={{ width: '250px' }}>
-                <IconStyle>
-                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
-                </IconStyle>
-                <ItemContectStyle>
-                  <m.div>
-                    <Typography variant="h6" color="primary">
-                      Dashboard
-                    </Typography>
-                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
-                  </m.div>
-                </ItemContectStyle>
-              </div>
-              <div key={3} style={{ width: '250px' }}>
-                <IconStyle>
-                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
-                </IconStyle>
-                <ItemContectStyle>
-                  <m.div>
-                    <Typography variant="h6" color="primary">
-                      Dashboard
-                    </Typography>
-                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
-                  </m.div>
-                </ItemContectStyle>
-              </div>
-              <div key={4} style={{ width: '250px' }}>
-                <IconStyle>
-                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
-                </IconStyle>
-                <ItemContectStyle>
-                  <m.div>
-                    <Typography variant="h6" color="primary">
-                      Dashboard
-                    </Typography>
-                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
-                  </m.div>
-                </ItemContectStyle>
-              </div>
+              {carouselData.map(({ iconUrl, title, content }, index) => (
+                <div key={index} style={{ width: '250px' }}>
+                  <IconStyle>
+                    <Image src={iconUrl} width="60" height="60" />
+                  </IconStyle>
+                  <ItemContectStyle>
+                    <m.div>
+                      <Typography variant="h6" color="primary">
+                        {title}
+                      </Typography>
+                      <Typography variant="subtitle2">{content}</Typography>
+                    </m.div>
+                  </ItemContectStyle>
+                  <ReacMoreButtonStyle
+                    color="secondary"
+                    variant="outlined"
+                    size="small"
+                    endIcon={<Image src="/assets/icons/arrow-right.png" />}
+                  >
+                    Read more
+                  </ReacMoreButtonStyle>
+                </div>
+              ))}
             </Carousel>
           </Grid>
         </Grid>
