@@ -31,8 +31,8 @@ export default function LoginForm() {
   });
 
   const defaultValues = {
-    email: 'demo@minimals.cc',
-    password: 'demo1234',
+    email: '',
+    password: '',
     remember: true,
   };
 
@@ -67,7 +67,7 @@ export default function LoginForm() {
       <Stack spacing={3}>
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
-        <RHFTextField name="email" label="Email address" />
+        <RHFTextField name="email" label="Email address" sx={{ backgroundColor: '#ffffff'}} />
 
         <RHFTextField
           name="password"
@@ -82,6 +82,7 @@ export default function LoginForm() {
               </InputAdornment>
             ),
           }}
+          sx={{ backgroundColor: '#ffffff'}}
         />
       </Stack>
 

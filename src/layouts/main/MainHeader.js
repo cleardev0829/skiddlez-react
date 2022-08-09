@@ -110,6 +110,7 @@ export default function MainHeader() {
           <LoginButtonStyle
             variant='contained'
             rel='noopener'
+            href="/auth/login-unprotected"
           >
             Login
           </LoginButtonStyle>
