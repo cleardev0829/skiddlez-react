@@ -104,7 +104,6 @@ export default function HomeOurFeature() {
               display: 'flex',
               alignItems: 'center',
               padding: '15px !important',
-              height: '658px',
               backgroundImage: 'url("/assets/images/Vector3.png")',
               backgroundSize: 'contain',
               backgroundPosition: 'left',

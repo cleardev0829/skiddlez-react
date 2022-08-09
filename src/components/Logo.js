@@ -11,14 +11,18 @@ Logo.propTypes = {
   sx: PropTypes.object,
 };
 
-export default function Logo({ disabledLink = false, sx }) {
-
+// eslint-disable-next-line react/prop-types
+export default function Logo({ isMobile, disabledLink = false, sx }) {
   // OR
   // const logo = '/logo/logo_single.svg';
 
-  const logo = (
-    <Box sx={{ width: {xs:'40px', sm:'171px', md:'171px'}, height: '77px', ...sx }}>
-      <Image src='/assets/images/Logo3.png' />
+  const logo = isMobile === 1 ? (
+    <Box sx={{ maxWidth: '77px', height: '50px', paddingTop: '10px', ...sx }}>
+      <Image src="/assets/images/Logo3.png" />
+    </Box>
+  ) : (
+    <Box sx={{ maxWidth: '171px', height: '77px', ...sx }}>
+      <Image src="/assets/images/Logo3.png" />
     </Box>
   );
 

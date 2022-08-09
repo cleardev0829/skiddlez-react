@@ -186,7 +186,7 @@ export default function HomeHugePackElements() {
                 </Typography>
               </m.div>
               <m.div>
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" style={{ width: 358 }} /> <br />
+                <TextField id="outlined-basic" label="Enter Your Email" variant="outlined" style={{ maxWidth: 358 }} /> <br />
                 <br />
                 <Button style={{ width: 169, backgroundColor: '#84CBBD' }} size="large" variant="contained">
                   Get Started

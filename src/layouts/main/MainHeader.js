@@ -1,7 +1,9 @@
+import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 // @mui
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, Button, AppBar, Toolbar, Container } from '@mui/material';
+
 // hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
 import useResponsive from '../../hooks/useResponsive';
@@ -18,6 +20,8 @@ import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
 import navConfig from './MenuConfig';
 
+import LoginDialog from './LoginDialog';
+import RegisterDialog from './RegisterDialog';
 // ----------------------------------------------------------------------
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
@@ -33,21 +37,20 @@ const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
 
 const SignUpButtonStyle = styled(Button)(({ theme }) => ({
   width: 116,
-  height: 44, 
+  height: 44,
   background: theme.palette.primary.main,
   boxShadow: '0px 0px 20px 3px rgba(0, 101, 165, 0.21)',
   borderRadius: 60,
-  margin: '0px 15px'
+  margin: '0px 5px',
 }));
 
 const LoginButtonStyle = styled(Button)(({ theme }) => ({
   width: 116,
   height: 44,
-  
   background: theme.palette.secondary.main,
   boxShadow: '0px 0px 20px 3px rgba(132, 203, 189, 0.37)',
   borderRadius: 60,
-  margin: '0px 15px'
+  margin: '0px 5px',
 }));
 
 const ToolbarShadowStyle = styled('div')(({ theme }) => ({
@@ -76,6 +79,25 @@ export default function MainHeader() {
 
   const isHome = pathname === '/';
 
+  const [openLogin, setLoginOpen] = React.useState(false);
+  const [openSignUp, setSignUpOpen] = React.useState(false);
+
+  const handleClickLoginOpen = () => {
+    setLoginOpen(true);
+  };
+
+  const handleLoginClose = () => {
+    setLoginOpen(false);
+  };
+
+  const handleClickSignUpOpen = () => {
+    setSignUpOpen(true);
+  };
+
+  const handleSignUpClose = () => {
+    setSignUpOpen(false);
+  };
+
   return (
     <AppBar sx={{ boxShadow: 0, bgcolor: 'white' }}>
       <ToolbarStyle
@@ -94,7 +116,7 @@ export default function MainHeader() {
             justifyContent: 'space-between',
           }}
         >
-          <Logo />
+          {isDesktop ? <Logo /> : <Logo isMobile={1} />}
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <MenuDesktop isOffset={isOffset} isHome={isHome} navConfig={navConfig} />}
@@ -102,19 +124,19 @@ export default function MainHeader() {
           <Box sx={{ flexGrow: 1 }} />
 
           <SignUpButtonStyle
-            variant='contained'
-            rel='noopener'
-            href="/auth/register-unprotected"
-            startIcon={<Image src="/assets/icons/signup.png" width="18px" height="18px"/>}
+            variant="contained"
+            rel="noopener"
+            onClick={handleClickSignUpOpen}
+            startIcon={<Image src="/assets/icons/signup.png" width="18px" height="18px" />}
           >
-            Sign Up
+            SignUp
           </SignUpButtonStyle>
 
           <LoginButtonStyle
-            variant='contained'
-            rel='noopener'
-            href="/auth/login-unprotected"
-            startIcon={<Image src="/assets/icons/login.png" width="18px" height="18px"/>}
+            variant="contained"
+            rel="noopener"
+            onClick={handleClickLoginOpen}
+            startIcon={<Image src="/assets/icons/login.png" width="18px" height="18px" />}
           >
             Login
           </LoginButtonStyle>
@@ -124,6 +146,8 @@ export default function MainHeader() {
       </ToolbarStyle>
 
       {isOffset && <ToolbarShadowStyle />}
+      <LoginDialog openLogin={openLogin} handleLoginClose={handleLoginClose}/>
+      <RegisterDialog openSignUp={openSignUp} handleSignUpClose={handleSignUpClose}/>
     </AppBar>
   );
 }
