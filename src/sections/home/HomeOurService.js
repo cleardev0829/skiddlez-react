@@ -28,7 +28,7 @@ export default function HomeOurService() {
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs="12" sx={{ position: 'relative' }}>
+          <Grid item xs={12} sx={{ position: 'relative' }}>
             <Box sx={{ textAlign: 'center' }}>
               <m.div>
                 <Typography color="secondary" variant="h6" sx={{ mb: 3 }}>
@@ -43,9 +43,9 @@ export default function HomeOurService() {
               </m.div>
             </Box>
           </Grid>
-          <Grid item xs="12">
+          <Grid item xs={12}>
             <Grid container spacing={2}>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image43.png'}
                   iconColor={'#C4F5EC'}
@@ -56,7 +56,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image38.png'}
                   iconColor={'#FFFFFF'}
@@ -67,7 +67,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image39.png'}
                   iconColor={'#FCE4C4'}
@@ -78,7 +78,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image42.png'}
                   iconColor={'#FCE4C4'}
@@ -89,7 +89,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image41.png'}
                   iconColor={'#F5C4EB'}
@@ -100,7 +100,7 @@ export default function HomeOurService() {
                   }
                 />
               </Grid>
-              <Grid item xs="4">
+              <Grid item xs={12} sm={6} md={6}>
                 <ServiceCard
                   imageUrl={'/assets/icons/image40.png'}
                   iconColor={'#B8E5FF'}

@@ -1,43 +1,89 @@
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Grid, Link, Divider, Container, Typography, Stack } from '@mui/material';
+import { Grid, Link, Divider, Container, Typography, Stack, Button, Box } from '@mui/material';
 // routes
-import { PATH_PAGE } from '../../routes/paths';
+
 // components
 import Logo from '../../components/Logo';
 import SocialsButton from '../../components/SocialsButton';
+import Image from '../../components/Image';
 
 // ----------------------------------------------------------------------
 
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'Service',
     children: [
-      { name: 'About us', href: PATH_PAGE.about },
-      { name: 'Contact us', href: PATH_PAGE.contact },
-      { name: 'FAQs', href: PATH_PAGE.faqs },
+      { name: 'Home', href: '#' },
+      { name: 'Product', href: '#' },
+      { name: 'Solution', href: '#' },
+      { name: 'Features', href: '#' },
+      { name: 'Contact', href: '#' },
     ],
   },
   {
-    headline: 'Legal',
+    headline: 'About Us',
     children: [
-      { name: 'Terms and Condition', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: 'Terms & Conditions', href: '#' },
+      { name: 'Copyrights', href: '#' },
+      { name: 'FUP', href: '#' },
+      { name: 'VAT', href: '#' },
     ],
   },
   {
-    headline: 'Contact',
+    headline: 'Company',
     children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' },
+      { name: 'Blog', href: '#' },
+      { name: 'Customers', href: '#' },
+      { name: 'About Us', href: '#' },
+      { name: 'Career', href: '#' },
+    ],
+  },
+  {
+    headline: 'Content',
+    children: [
+      { name: 'Content', href: '#' },
+      { name: 'Packs', href: '#' },
+      { name: 'Offers', href: '#' },
+      { name: 'Plugins', href: '#' },
     ],
   },
 ];
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled('div')(() => ({
   position: 'relative',
-  backgroundColor: theme.palette.background.default,
+  background: 'linear-gradient(180deg, #0065A5 0%, #1DB99B 100%)',
+  color: 'white',
+}));
+
+const ButtonStyle = styled(Button)(() => ({
+  color: '#FFFFFF',
+  boxShadow: '0px 0px 20px 5px rgba(0, 101, 165, 0.35)',
+  borderColor: 'white',
+  borderRadius: '4px',
+  margin: '10px',
+  width: '184px',
+  height: '67px',
+}));
+
+const ButtonTextStyle = styled('div')(() => ({
+  textAlign: 'left',
+  display: 'block',
+}));
+
+const ButtonSubTitleStyle = styled('div')(() => ({
+  fontWeight: 300,
+  fontSize: '12px',
+  lineHeight: '26px',
+  display: 'block',
+}));
+
+const ButtonTitleStyle = styled('div')(() => ({
+  fontWeight: 600,
+  fontSize: '18px',
+  lineHeight: '26px',
+  display: 'block',
 }));
 
 // ----------------------------------------------------------------------
@@ -52,13 +98,12 @@ export default function MainFooter() {
           justifyContent={{ xs: 'center', md: 'space-between' }}
           sx={{ textAlign: { xs: 'center', md: 'left' } }}
         >
-          <Grid item xs={12} sx={{ mb: 3 }}>
-            <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
-          </Grid>
           <Grid item xs={8} md={3}>
+            <Stack sx={{ mb: 3 }}>
+              <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
+            </Stack>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              The starting point for your next project with Minimal UI Kit, built on the newest
-              version of Material-UI ©, ready to be customized to your style.
+              Lorem Ipsum is simply dummy text of the printing andtypesetting industry.
             </Typography>
 
             <Stack
@@ -70,15 +115,11 @@ export default function MainFooter() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={7}>
-            <Stack
-              spacing={5}
-              direction={{ xs: 'column', md: 'row' }}
-              justifyContent="space-between"
-            >
+          <Grid item xs={12} md={9} sx={{ position: 'relative' }}>
+            <Stack spacing={5} direction={{ xs: 'column', md: 'row' }} justifyContent="space-between">
               {LINKS.map((list) => (
-                <Stack key={list.headline} spacing={2}>
-                  <Typography component="p" variant="overline">
+                <Stack key={list.headline} spacing={0}>
+                  <Typography component="p" variant="overline" sx={{ mb: 3, mt: 2 }}>
                     {list.headline}
                   </Typography>
                   {list.children.map((link) => (
@@ -95,23 +136,50 @@ export default function MainFooter() {
                   ))}
                 </Stack>
               ))}
+              <Stack height={160} sx={{ alignItems: 'center' }}>
+                <Image src="/assets/images/image29.png" width={187} height={160} />
+              </Stack>
+            </Stack>
+            <Stack>
+              <Box sx={{ mt: '10px', marginRight: 0, marginLeft: ({xs: '0px', md: 'auto'}) }}>
+                <ButtonStyle
+                  variant="outlined"
+                  startIcon={<Image src="/assets/icons/googleplay.png" width="20px" height="20px" />}
+                >
+                  <ButtonTextStyle>
+                    <ButtonSubTitleStyle>GET IT ON</ButtonSubTitleStyle>
+                    <ButtonTitleStyle>Google Play</ButtonTitleStyle>
+                  </ButtonTextStyle>
+                </ButtonStyle>
+                <ButtonStyle
+                  variant="outlined"
+                  startIcon={<Image src="/assets/icons/applestore.png" width="20px" height="20px" />}
+                >
+                  <ButtonTextStyle>
+                    <ButtonSubTitleStyle>GET IT ON</ButtonSubTitleStyle>
+                    <ButtonTitleStyle>Apple Store</ButtonTitleStyle>
+                  </ButtonTextStyle>
+                </ButtonStyle>
+              </Box>
             </Stack>
           </Grid>
         </Grid>
-
-        <Typography
-          component="p"
-          variant="body2"
-          sx={{
-            mt: 10,
-            pb: 5,
-            fontSize: 13,
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
-          © 2021. All rights reserved
-        </Typography>
       </Container>
+      <Typography
+        component="p"
+        variant="body2"
+        sx={{
+          mt: 10,
+          pt: 1,
+          pb: 1,
+          fontSize: 13,
+          backgroundColor: '#0065A5',
+          textAlign: 'center',
+          color: 'white',
+        }}
+      >
+        © 2021. All rights reserved
+      </Typography>
     </RootStyle>
   );
 }

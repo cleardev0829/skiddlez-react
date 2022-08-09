@@ -227,7 +227,7 @@ export default function HomeHugePackElements() {
               </div>
               <BigBoxStyle />
             </RightImageStyle>
-            <box
+            <Box
               style={{
                 position: 'absolute',
                 right: 60,
@@ -236,7 +236,7 @@ export default function HomeHugePackElements() {
             >
               <ArrowBackIosNewIcon color="primary" style={{ margin: 10 }} />
               <ArrowForwardIosIcon color="primary" style={{ margin: 10 }} />
-            </box>
+            </Box>
             <InfoBoxStyle>
               <InfoBoxItemStyle>
                 <InfoBoxIconStyle>

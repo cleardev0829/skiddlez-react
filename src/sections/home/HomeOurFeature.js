@@ -1,10 +1,8 @@
 import { m } from 'framer-motion';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Grid, Button, Container, Typography, Fab } from '@mui/material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Grid, Button, Container, Typography } from '@mui/material';
+import Carousel from 'react-elastic-carousel';
 
 // components
 import Image from '../../components/Image';
@@ -52,21 +50,13 @@ const ItemContectStyle = styled('div')(() => ({
   textAlign: 'left',
 }));
 
-const NavigatorStyle = styled('div')(() => ({
-  position: 'absolute',
-  left: '50%',
-  top: '50%',
-  transform: 'translate(-50%, -50%)',
-}));
-
-const NavIconStyle = styled(Fab)(() => ({
-  width: 42,
-  height: 42,
-  backgroundColor: 'white',
-  '&:hover': {
-    backgroundColor: 'white'
-  }
-}))
+// ----------------------------------------------------------------------
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+];
 // ----------------------------------------------------------------------
 
 export default function HomeOurFeature() {
@@ -149,114 +139,62 @@ export default function HomeOurFeature() {
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
               </Typography>
             </m.div>
-            <div>
-              <Grid container>
-                <Grid item xs="1" sx={{ position: 'relative' }}>
-                  <NavigatorStyle>
-                    <NavIconStyle aria-label="add">
-                      <ArrowBackIosNewIcon color="primary" />
-                    </NavIconStyle>
-                  </NavigatorStyle>
-                </Grid>
-                <Grid item xs="10">
-                  <Grid containder sx={{ display: 'flex' }}>
-                    <Grid item md="3">
-                      <IconStyle>
-                        <Image src="/assets/icons/image 34.png" width="60" height="60" />
-                      </IconStyle>
-                      <ItemContectStyle>
-                        <m.div>
-                          <Typography variant="h6" color="primary">
-                            Dashboard
-                          </Typography>
-                          <Typography variant="subtitle2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
-                          </Typography>
-                        </m.div>
-                      </ItemContectStyle>
-                      <m.div>
-                        <Button size="small" endIcon={<ArrowRightAltIcon />}>
-                          Read More
-                        </Button>
-                      </m.div>
-                    </Grid>
-                    <Grid item md="3">
-                      <IconStyle>
-                        <Image src="/assets/icons/image 35.png" width="60" height="60" />
-                      </IconStyle>
-                      <ItemContectStyle>
-                        <m.div>
-                          <Typography variant="h6" color="primary">
-                            Automations
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Typography variant="subtitle2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Button size="small" endIcon={<ArrowRightAltIcon />}>
-                            Read More
-                          </Button>
-                        </m.div>
-                      </ItemContectStyle>
-                    </Grid>
-                    <Grid item md="3">
-                      <IconStyle>
-                        <Image src="/assets/icons/image 36.png" width="60" height="60" />
-                      </IconStyle>
-                      <ItemContectStyle>
-                        <m.div>
-                          <Typography variant="h6" color="primary">
-                            Files
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Typography variant="subtitle2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Button size="small" endIcon={<ArrowRightAltIcon />}>
-                            Read More
-                          </Button>
-                        </m.div>
-                      </ItemContectStyle>
-                    </Grid>
-                    <Grid item md="3">
-                      <IconStyle>
-                        <Image src="/assets/icons/image 37.png" width="60" height="60" />
-                      </IconStyle>
-                      <ItemContectStyle>
-                        <m.div>
-                          <Typography variant="h6" color="primary">
-                            Integrations
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Typography variant="subtitle2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing.
-                          </Typography>
-                        </m.div>
-                        <m.div>
-                          <Button size="small" endIcon={<ArrowRightAltIcon />}>
-                            Read More
-                          </Button>
-                        </m.div>
-                      </ItemContectStyle>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs="1" sx={{ position: 'relative' }}>
-                  <NavigatorStyle>
-                    <NavIconStyle aria-label="add">
-                      <ArrowForwardIosIcon color="primary" />
-                    </NavIconStyle>
-                  </NavigatorStyle>
-                </Grid>
-              </Grid>
-            </div>
+          </Grid>
+          <Grid item xs={12} lg={12}>
+            <Carousel breakPoints={breakPoints}>
+              <div key={1} style={{ width: '250px' }}>
+                <IconStyle>
+                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
+                </IconStyle>
+                <ItemContectStyle>
+                  <m.div>
+                    <Typography variant="h6" color="primary">
+                      Dashboard
+                    </Typography>
+                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
+                  </m.div>
+                </ItemContectStyle>
+              </div>
+              <div key={2} style={{ width: '250px' }}>
+                <IconStyle>
+                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
+                </IconStyle>
+                <ItemContectStyle>
+                  <m.div>
+                    <Typography variant="h6" color="primary">
+                      Dashboard
+                    </Typography>
+                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
+                  </m.div>
+                </ItemContectStyle>
+              </div>
+              <div key={3} style={{ width: '250px' }}>
+                <IconStyle>
+                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
+                </IconStyle>
+                <ItemContectStyle>
+                  <m.div>
+                    <Typography variant="h6" color="primary">
+                      Dashboard
+                    </Typography>
+                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
+                  </m.div>
+                </ItemContectStyle>
+              </div>
+              <div key={4} style={{ width: '250px' }}>
+                <IconStyle>
+                  <Image src="/assets/icons/image 34.png" width="60" height="60" />
+                </IconStyle>
+                <ItemContectStyle>
+                  <m.div>
+                    <Typography variant="h6" color="primary">
+                      Dashboard
+                    </Typography>
+                    <Typography variant="subtitle2">Lorem ipsum dolor sit amet, consectetur adipiscing.</Typography>
+                  </m.div>
+                </ItemContectStyle>
+              </div>
+            </Carousel>
           </Grid>
         </Grid>
       </Container>
