@@ -17,7 +17,7 @@ export default function Logo({ disabledLink = false, sx }) {
   // const logo = '/logo/logo_single.svg';
 
   const logo = (
-    <Box sx={{ width: '171px', height: '77px', ...sx }}>
+    <Box sx={{ width: {xs:'40px', sm:'171px', md:'171px'}, height: '77px', ...sx }}>
       <Image src='/assets/images/Logo3.png' />
     </Box>
   );

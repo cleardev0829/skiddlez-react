@@ -36,8 +36,8 @@ const CoverBackground = styled(Card)(({ theme }) => ({
 
 const SectionStyle = styled(Card)(() => ({
   width: '100%',
-  backgroundImage: 'url("/assets/images/image1.png")',
-  backgroundSize: 'contain',
+  backgroundImage: 'url("/assets/images/image13.png")',
+  backgroundSize: 'cover',
   backgroundPosition: 'left',
   backgroundRepeat: 'no-repeat',
   borderRadius: 0,
@@ -45,12 +45,11 @@ const SectionStyle = styled(Card)(() => ({
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
-  maxWidth: 480,
   margin: 'auto',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'cover',
   flexDirection: 'column',
-  padding: theme.spacing(12, 0),
+  padding: theme.spacing(20, 0, 12, 0),
 }));
 
 // ----------------------------------------------------------------------
@@ -73,7 +72,7 @@ export default function Login() {
             </CoverBackground>
           </SectionStyle>
         )}
-        <Container maxWidth="sm" sx={{ backgroundColor: '#F3FAFF' }}>
+        <Container maxWidth="md" sx={{ backgroundColor: '#F3FAFF' }}>
           <ContentStyle>
             <Stack direction="row" alignItems="center" sx={{ mb: 3 }}>
               <Box sx={{ flexGrow: 1 }}>
@@ -99,7 +98,7 @@ export default function Login() {
 
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
               Don’t have an account?{' '}
-              <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
+              <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.registerUnprotected}>
                 Sign Up
               </Link>
             </Typography>
