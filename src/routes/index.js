@@ -47,7 +47,7 @@ export default function Router() {
             </GuestGuard>
           ),
         },
-        { path: 'login-unprotected', element: <Login /> },
+        { path: 'login-unprotected', element: <MainLayout />, children: [{ element: <Login />, index: true }] },
         { path: 'register-unprotected', element: <Register /> },
         { path: 'reset-password', element: <ResetPassword /> },
         { path: 'new-password', element: <NewPassword /> },
