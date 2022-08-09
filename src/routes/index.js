@@ -48,7 +48,7 @@ export default function Router() {
           ),
         },
         { path: 'login-unprotected', element: <MainLayout />, children: [{ element: <Login />, index: true }] },
-        { path: 'register-unprotected', element: <Register /> },
+        { path: 'register-unprotected', element: <MainLayout />, children: [{ element: <Register />, index: true }] },
         { path: 'reset-password', element: <ResetPassword /> },
         { path: 'new-password', element: <NewPassword /> },
         { path: 'verify', element: <VerifyCode /> },

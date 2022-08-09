@@ -1,13 +1,11 @@
-import { capitalCase } from 'change-case';
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Card, Stack, Link, Alert, Tooltip, Container, Typography, Button } from '@mui/material';
+import { Box, Card, Stack, Link, Container, Typography, Button } from '@mui/material';
 import Divider from '@mui/material/Divider';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
 // hooks
-import useAuth from '../../hooks/useAuth';
 import useResponsive from '../../hooks/useResponsive';
 // components
 import Page from '../../components/Page';
@@ -30,19 +28,19 @@ const CoverBackground = styled(Card)(({ theme }) => ({
   zIndex: 99,
   opacity: 0.95,
   borderRadius: 0,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  color: '#FFFFFF',
 }));
 
 const SectionStyle = styled(Card)(() => ({
   width: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
   backgroundImage: 'url("/assets/images/image1.png")',
   backgroundSize: 'contain',
   backgroundPosition: 'left',
   backgroundRepeat: 'no-repeat',
   borderRadius: 0,
-  color: '#FFFFFF',
   zIndex: -100,
 }));
 
@@ -102,7 +100,7 @@ export default function Login() {
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
               Don’t have an account?{' '}
               <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
-                Get started
+                Sign Up
               </Link>
             </Typography>
           </ContentStyle>

@@ -1,17 +1,16 @@
-import { capitalCase } from 'change-case';
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Card, Link, Container, Typography, Tooltip } from '@mui/material';
+import { Box, Card, Link, Container, Typography, Stack } from '@mui/material';
+import Divider from '@mui/material/Divider';
 // hooks
-import useAuth from '../../hooks/useAuth';
 import useResponsive from '../../hooks/useResponsive';
 // routes
 import { PATH_AUTH } from '../../routes/paths';
+
 // components
 import Page from '../../components/Page';
-import Logo from '../../components/Logo';
-import Image from '../../components/Image';
+import SocialsButton from '../../components/SocialsButton';
 // sections
 import { RegisterForm } from '../../sections/auth/register';
 
@@ -23,29 +22,27 @@ const RootStyle = styled('div')(({ theme }) => ({
   },
 }));
 
-const HeaderStyle = styled('header')(({ theme }) => ({
-  top: 0,
-  zIndex: 9,
-  lineHeight: 0,
+const CoverBackground = styled(Card)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
   width: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  position: 'absolute',
-  padding: theme.spacing(3),
-  justifyContent: 'space-between',
-  [theme.breakpoints.up('md')]: {
-    alignItems: 'flex-start',
-    padding: theme.spacing(7, 5, 0, 7),
-  },
-}));
-
-const SectionStyle = styled(Card)(({ theme }) => ({
-  width: '100%',
-  maxWidth: 464,
+  height: '100%',
+  zIndex: 99,
+  opacity: 0.95,
+  borderRadius: 0,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  margin: theme.spacing(2, 0, 2, 2),
+  color: '#FFFFFF',
+}));
+
+const SectionStyle = styled(Card)(() => ({
+  width: '100%',
+  backgroundImage: 'url("/assets/images/image1.png")',
+  backgroundSize: 'contain',
+  backgroundPosition: 'left',
+  backgroundRepeat: 'no-repeat',
+  borderRadius: 0,
+  zIndex: -100,
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -61,83 +58,52 @@ const ContentStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Register() {
-  const { method } = useAuth();
-
-  const smUp = useResponsive('up', 'sm');
-
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Page title="Register">
+    <Page title="Sign Up">
       <RootStyle>
-        <HeaderStyle>
-          <Logo />
-          {smUp && (
-            <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-              Already have an account? {''}
-              <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.login}>
-                Login
-              </Link>
-            </Typography>
-          )}
-        </HeaderStyle>
-
         {mdUp && (
           <SectionStyle>
-            <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Manage the job more effectively with Minimal
-            </Typography>
-            <Image
-              visibleByDefault
-              disabledEffect
-              alt="register"
-              src="/assets/illustrations/illustration_register.png"
-            />
+            <CoverBackground>
+              <Typography variant="h3" sx={{ px: 5, mt: 0, mb: 1, ml: 8 }}>
+                You're new here!
+              </Typography>
+              <Typography variant="body2" sx={{ px: 5, mt: 0, mb: 1, ml: 8 }}>
+                Sign up with your email and personal details to get started!
+              </Typography>
+            </CoverBackground>
           </SectionStyle>
         )}
 
-        <Container>
+        <Container maxWidth="sm">
           <ContentStyle>
-            <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
+            <Stack direction="row" alignItems="center" sx={{ mb: 3 }}>
               <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="h4" gutterBottom>
-                  Get started absolutely free.
+                <Typography color="primary" variant="h4" gutterBottom>
+                  Sign Up
                 </Typography>
-                <Typography sx={{ color: 'text.secondary' }}>Free forever. No credit card needed.</Typography>
               </Box>
-              <Tooltip title={capitalCase(method)}>
-                <>
-                  <Image
-                    disabledEffect
-                    src={`https://minimal-assets-api-dev.vercel.app/assets/icons/auth/ic_${method}.png`}
-                    sx={{ width: 32, height: 32 }}
-                  />
-                </>
-              </Tooltip>
-            </Box>
+            </Stack>
 
             <RegisterForm />
 
-            <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-              By registering, I agree to Minimal&nbsp;
-              <Link underline="always" color="text.primary" href="#">
-                Terms of Service
-              </Link>
-              {''}and{''}
-              <Link underline="always" color="text.primary" href="#">
-                Privacy Policy
-              </Link>
-              .
-            </Typography>
+            <Divider sx={{ fontSize: '14px',mt: 3, mb: 3 }}>Or Sign in with Email</Divider>
 
-            {!smUp && (
-              <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
-                Already have an account?{' '}
-                <Link variant="subtitle2" to={PATH_AUTH.login} component={RouterLink}>
-                  Login
-                </Link>
-              </Typography>
-            )}
+            <Stack
+              direction="row"
+              justifyContent={{ xs: 'center', itemAlign: 'center' }}
+              sx={{ mb: 0 }}
+            >
+              <SocialsButton sx={{ mx: 0.5 }} />
+            </Stack>
+
+            <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
+              Already have an account?{' '}
+              <Link variant="subtitle2" to={PATH_AUTH.login} component={RouterLink}>
+                Login
+              </Link>
+            </Typography>
           </ContentStyle>
         </Container>
       </RootStyle>

@@ -11,6 +11,7 @@ import cssStyles from '../../utils/cssStyles';
 import { HEADER } from '../../config';
 // components
 import Logo from '../../components/Logo';
+import Image from '../../components/Image';
 // import Label from '../../components/Label';
 //
 import MenuDesktop from './MenuDesktop';
@@ -103,6 +104,8 @@ export default function MainHeader() {
           <SignUpButtonStyle
             variant='contained'
             rel='noopener'
+            href="/auth/register-unprotected"
+            startIcon={<Image src="/assets/icons/signup.png" width="18px" height="18px"/>}
           >
             Sign Up
           </SignUpButtonStyle>
@@ -111,6 +114,7 @@ export default function MainHeader() {
             variant='contained'
             rel='noopener'
             href="/auth/login-unprotected"
+            startIcon={<Image src="/assets/icons/login.png" width="18px" height="18px"/>}
           >
             Login
           </LoginButtonStyle>
