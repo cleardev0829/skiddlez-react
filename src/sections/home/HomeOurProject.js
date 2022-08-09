@@ -66,7 +66,7 @@ export default function HomeOurProject() {
                     <Tab label="IT" value="8" />
                   </TabList>
                 </Box>
-                <Box sx={{ minHeight: '850px',}}>
+                <Box sx={{ minHeight: { xs: '250px', sm: '500px', md: '850px' } }}>
                   <TabPanel value="1">
                     <Image src="/assets/images/OurProduct2.png" width="100%" height="100%" />
                   </TabPanel>

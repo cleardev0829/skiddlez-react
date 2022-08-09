@@ -1,14 +1,12 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
-import { Link, Stack, Alert, IconButton, InputAdornment } from '@mui/material';
+import { Button, Stack, Alert, IconButton, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-// routes
-import { PATH_AUTH } from '../../../routes/paths';
+
 // hooks
 import useAuth from '../../../hooks/useAuth';
 import useIsMountedRef from '../../../hooks/useIsMountedRef';
@@ -18,7 +16,9 @@ import { FormProvider, RHFTextField, RHFCheckbox } from '../../../components/hoo
 
 // ----------------------------------------------------------------------
 
-export default function LoginForm() {
+export default function LoginForm(props) {
+  // eslint-disable-next-line react/prop-types
+  const {resetPasswordHandle} = props;
   const { login } = useAuth();
 
   const isMountedRef = useIsMountedRef();
@@ -88,9 +88,9 @@ export default function LoginForm() {
 
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
         <RHFCheckbox name="remember" label="Remember me" />
-        <Link component={RouterLink} variant="subtitle2" to={PATH_AUTH.resetPassword}>
+        <Button color="primary" onClick={resetPasswordHandle} >
           Forgot password?
-        </Link>
+        </Button>
       </Stack>
 
       <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>

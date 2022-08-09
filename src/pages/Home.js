@@ -6,7 +6,7 @@ import Page from '../components/Page';
 import {
   HomeDarkMode,
   // HomeLookingFor,
-  HomeColorPresets,
+  HomeOurProduct,
   HomePricingPlans,
   // HomeAdvertisement,
   // HomeCleanInterfaces,
@@ -45,7 +45,7 @@ export default function HomePage() {
 
         <HomeDarkMode />
 
-        <HomeColorPresets />
+        <HomeOurProduct />
 
         <HomeOurFeature />
 

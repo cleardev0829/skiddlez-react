@@ -62,11 +62,11 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
         onClick={handleDrawerOpen}
         sx={{
           ml: 1,
-          ...(isHome && { color: 'common.white' }),
+          ...(isHome && { color: 'text.primary' }),
           ...(isOffset && { color: 'text.primary' }),
         }}
       >
-        <Iconify icon={'eva:menu-2-fill'} />
+        <Iconify icon={'eva:menu-2-fill'}/>
       </IconButtonAnimate>
 
       <Drawer
