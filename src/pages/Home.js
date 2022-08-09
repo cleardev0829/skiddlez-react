@@ -16,6 +16,10 @@ import {
   HomeInegrateApp,
   HomeOurService,
   HomeDownloadMobile,
+  HomeCustomerSupport,
+  HomeProjectStory,
+  HomeContactUs,
+  HomeFreeTrial,
 } from '../sections/home';
 
 // ----------------------------------------------------------------------
@@ -55,9 +59,13 @@ export default function HomePage() {
 
         <HomeDownloadMobile />
 
-        <HomeLookingFor />
+        <HomeCustomerSupport />
 
-        <HomeAdvertisement />
+        <HomeProjectStory />
+
+        <HomeContactUs />
+
+        <HomeFreeTrial />
       {/* </ContentStyle> */}
     </Page>
   );

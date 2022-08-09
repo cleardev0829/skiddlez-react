@@ -12,7 +12,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   background: '#F0FBF8',
 }));
 
-const Buttontyle = styled(Button)(() => ({
+const ButtonStyle = styled(Button)(() => ({
   background: 'linear-gradient(89.86deg, #0065A5 0.06%, #1DB99B 99.83%)',
   boxShadow: '0px 0px 20px 5px rgba(0, 101, 165, 0.35)',
   borderRadius: '4px',
@@ -45,7 +45,7 @@ export default function HomeDownloadMobile() {
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs="12" md="6" sx={{ position: 'relative' }}>
+          <Grid item xs={12} md={6} sx={{ position: 'relative' }}>
             <Box sx={{ textAlign: 'left', padding: '30px' }}>
               <m.div>
                 <Typography color="primary" variant="h2" sx={{ mb: 3 }}>
@@ -62,21 +62,21 @@ export default function HomeDownloadMobile() {
               </m.div>
             </Box>
             <Box sx={{ paddingLeft: '30px'}}>
-              <Buttontyle variant="contained" startIcon={<Image src="/assets/icons/googleplay.png" width="20px" height="20px"/>}>
+              <ButtonStyle variant="contained" startIcon={<Image src="/assets/icons/googleplay.png" width="20px" height="20px"/>}>
                 <ButtonTextStyle>
                   <ButtonSubTitleStyle>GET IT ON</ButtonSubTitleStyle>
                   <ButtonTitleStyle>Google Play</ButtonTitleStyle>
                 </ButtonTextStyle>
-              </Buttontyle>
-              <Buttontyle variant="contained" startIcon={<Image src="/assets/icons/applestore.png" width="20px" height="20px"/>}>
+              </ButtonStyle>
+              <ButtonStyle variant="contained" startIcon={<Image src="/assets/icons/applestore.png" width="20px" height="20px"/>}>
                 <ButtonTextStyle>
                   <ButtonSubTitleStyle>GET IT ON</ButtonSubTitleStyle>
                   <ButtonTitleStyle>Apple Store</ButtonTitleStyle>
                 </ButtonTextStyle>
-              </Buttontyle>
+              </ButtonStyle>
             </Box>
           </Grid>
-          <Grid item xs="12" md="6">
+          <Grid item xs={12} md={6}>
             <Box sx={{ padding: '20px' }}>
               <Image src="/assets/images/image24.png" width="100%" height="100%" />
             </Box>

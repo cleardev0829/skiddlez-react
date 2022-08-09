@@ -48,7 +48,7 @@ export default function HomeInegrateApp() {
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs="12" md="6" sx={{ position: 'relative'}}>
+          <Grid item xs={12} md={6} sx={{ position: 'relative'}}>
             <Image src="/assets/images/SocialIcons.png" width="100%" height="100%" />
             <LeftImageStyle>
               <Image src="/assets/images/logo2.png" width="156px" height="173px" />
@@ -56,8 +56,8 @@ export default function HomeInegrateApp() {
           </Grid>
           <Grid
             item
-            xs="12"
-            md="6"
+            xs={12}
+            md={6}
             sx={{
               position: 'relative',
               backgroundImage: 'url("/assets/images/Vector4.png")',

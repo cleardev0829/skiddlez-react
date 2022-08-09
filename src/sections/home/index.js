@@ -12,3 +12,8 @@ export { default as HomeOurProject } from './HomeOurProject';
 export { default as HomeInegrateApp } from './HomeInegrateApp';
 export { default as HomeOurService } from './HomeOurService';
 export { default as HomeDownloadMobile } from './HomeDownloadMobile';
+export { default as HomeCustomerSupport } from './HomeCustomerSupport';
+export { default as HomeProjectStory } from './HomeProjectStory';
+export { default as HomeContactUs } from './HomeContactUs';
+export { default as HomeFreeTrial } from './HomeFreeTrial';
+

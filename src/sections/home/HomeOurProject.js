@@ -28,7 +28,7 @@ export default function HomeOurProject() {
     <RootStyle>
       <Container style={{ maxWidth: 1440 }}>
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs="12" sx={{ position: 'relative' }}>
+          <Grid item xs={12} sx={{ position: 'relative' }}>
             <Box sx={{ textAlign: 'center' }}>
               <m.div xs={{ zIndex: 99999 }}>
                 <Typography color="primary" variant="h2" sx={{ mb: 3, fontWeight: '600!important' }}>
@@ -50,7 +50,11 @@ export default function HomeOurProject() {
                     aria-label="Our Project"
                     variant="scrollable"
                     scrollButtons="auto"
-                    centered
+                    sx={{
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      maxWidth: '850px'
+                    }}
                   >
                     <Tab label="Project Management" value="1" />
                     <Tab label="Engineering" value="2" />
