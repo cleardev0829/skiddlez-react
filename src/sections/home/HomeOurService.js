@@ -115,7 +115,7 @@ export default function HomeOurService() {
           </Grid>
           <Grid sx={{ itemAlign: 'center' }}>
             <Box sx={{ padding: '10px', marginTop: '20px'}}>
-              <SeeAllButton backgroundColor="primary" >See All</SeeAllButton>
+              <SeeAllButton backgroundcolor="primary" >See All</SeeAllButton>
             </Box>
           </Grid>
         </Grid>
